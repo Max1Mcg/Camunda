@@ -27,13 +27,13 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=time.hours &gt; 0 and time.hours &lt; 12</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0ual8e4" sourceRef="Activity_1392i5u" targetRef="Event_1ab90i7" />
-    <bpmn:sequenceFlow id="Flow_0jhba9e" name="agter noon?" sourceRef="Gateway_0hmp1uh" targetRef="Activity_1okkwkm" />
+    <bpmn:sequenceFlow id="Flow_0jhba9e" name="after_noon?" sourceRef="Gateway_0hmp1uh" targetRef="Activity_1okkwkm" />
     <bpmn:sequenceFlow id="Flow_0uc806x" sourceRef="Activity_1okkwkm" targetRef="Event_1ab90i7" />
     <bpmn:serviceTask id="Activity_1392i5u" name="Good Morning">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="make-greating" />
         <zeebe:taskHeaders>
-          <zeebe:header key="greating" value="good morning" />
+          <zeebe:header key="greeting" value="good morning" />
         </zeebe:taskHeaders>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_00b480a</bpmn:incoming>
@@ -43,7 +43,7 @@
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="make-greating" />
         <zeebe:taskHeaders>
-          <zeebe:header key="greating" value="good afternoon" />
+          <zeebe:header key="greeting" value="good afternoon" />
         </zeebe:taskHeaders>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0jhba9e</bpmn:incoming>
@@ -58,17 +58,17 @@
           <dc:Bounds x="185" y="142" width="25" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1vt28ww_di" bpmnElement="Activity_0rjuhie">
-        <dc:Bounds x="250" y="77" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_0hmp1uh_di" bpmnElement="Gateway_0hmp1uh" isMarkerVisible="true">
-        <dc:Bounds x="405" y="92" width="50" height="50" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1ab90i7_di" bpmnElement="Event_1ab90i7">
         <dc:Bounds x="872" y="99" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="880" y="142" width="20" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1vt28ww_di" bpmnElement="Activity_0rjuhie">
+        <dc:Bounds x="250" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0hmp1uh_di" bpmnElement="Gateway_0hmp1uh" isMarkerVisible="true">
+        <dc:Bounds x="405" y="92" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0hnl9ci_di" bpmnElement="Activity_1392i5u">
         <dc:Bounds x="580" y="77" width="100" height="80" />

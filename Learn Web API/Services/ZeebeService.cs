@@ -97,6 +97,7 @@ namespace Cloudstarter.Services
         {
             _createWorker("get-time", async (client, job) =>
             {
+
                 _logger.LogInformation("Received job: " + job);
                 using (var httpClient = new HttpClient())
                 {
@@ -114,9 +115,8 @@ namespace Cloudstarter.Services
         public void CreateMakeGreetingWorker()
         {
 
-            _createWorker("make-greeting", async (client, job) =>
+            _createWorker("make-greating", async (client, job) =>
             {
-                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
                 _logger.LogInformation("Make Greeting Received job: " + job);
 
@@ -126,7 +126,6 @@ namespace Cloudstarter.Services
                 string name = variables.name;
                 Console.WriteLine(greeting);
                 Console.WriteLine(name);
-                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 await client.NewCompleteJobCommand(job.Key)
                     .Variables("{\"say\": \"" + greeting + " " + name + "\"}")
                     .Send();
